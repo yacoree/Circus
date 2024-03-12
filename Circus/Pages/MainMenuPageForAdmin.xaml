@@ -1,0 +1,143 @@
+﻿<Page x:Class="Circus.Pages.MainMenuPageForAdmin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Circus.Pages"
+      mc:Ignorable="d" 
+      Height="450" Width="800" FontSize="20" FontFamily="Courier New"
+      Title="MainMenuPageForAdmin">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="ГЛАВНОЕ МЕНЮ"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.Row="1"
+            Grid.RowSpan="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            FontSize="40"/>
+        <TextBlock Text="Пользователь:"
+            Grid.Column="0"
+             Margin="15"
+            Grid.ColumnSpan="2"
+            Grid.Row="2" Grid.RowSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+        <Border CornerRadius="5"
+                Background="#FFD700"
+            BorderBrush="#008080"
+            BorderThickness="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="4"
+                Grid.Row="2"
+                Grid.RowSpan="2"
+                Width="500"
+                Height="40">
+            <TextBlock
+                x:Name="UserTB"
+                Width="500"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
+        </Border>
+
+        <TextBlock Text="Логин:"
+            Grid.Column="0"
+            Margin="15"
+            Grid.Row="3" Grid.RowSpan="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+        <Border CornerRadius="5"
+                Background="#FF6347" 
+            BorderBrush="#8B4513"
+            BorderThickness="2"
+                Grid.Column="2"
+                Grid.ColumnSpan="4"
+                Grid.Row="3"
+                Grid.RowSpan="2"
+                Width="500"
+                Height="40">
+            <TextBlock
+                x:Name="LoginTB"
+                Width="500"
+                Height="40"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"/>
+        </Border>
+        <Button Content="Сотрудники"
+            x:Name="WorkersBTN"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Grid.Row="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="200"
+            Height="38"
+            Background="LightGreen"
+            Click="WorkersBTN_Click"/>
+        <Button Content="Животные"
+            x:Name="AnimalsBTN"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="200"
+            Height="38"
+            Background="LightBlue"
+                Click="AnimalsBTN_Click"/>
+        <Button Content="Артисты"
+            x:Name="ArtistsBTN"
+            Grid.Column="4"
+            Grid.ColumnSpan="2"
+            Grid.Row="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="200"
+            Height="38"
+            Background="LightCoral"
+                    Click="ArtistsBTN_Click"/>
+        <Button Content="Обслуживающий персонал"
+            x:Name="ServiceStaffBTN"
+            Grid.Column="1"
+            Grid.ColumnSpan="4"
+            Grid.Row="6"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Width="468"
+            Height="38"
+            Background="LightSteelBlue"
+                        Click="ServiceStaffBTN_Click" Margin="33,2,0,0"/>
+        <Button Content="Назад"
+            x:Name="BackBTN"
+            Grid.Column="2"
+            Grid.ColumnSpan="2"
+            Grid.Row="8"
+            Width="200"
+            Height="38"
+            Background="LightYellow"
+            Click="BackBTN_Click"/>
+    </Grid>
+</Page>

@@ -1,0 +1,1151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CirkModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Type" Type="int" />
+          <Property Name="Age" Type="int" />
+          <Property Name="ID_Gender" Type="int" />
+          <Property Name="Weight" Type="int" />
+          <Property Name="FoodPreference" Type="nvarchar(max)" />
+          <Property Name="CareRecommendations" Type="nvarchar(max)" />
+          <Property Name="ID_Trainer" Type="int" />
+        </EntityType>
+        <EntityType Name="AnimalType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Applicationn">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Artist" Type="int" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="DoneOrNo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Worker" Type="int" />
+        </EntityType>
+        <EntityType Name="Cage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Animal" Type="int" />
+        </EntityType>
+        <EntityType Name="CostumeDept">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DressingRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="7" />
+        </EntityType>
+        <EntityType Name="Perfomance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID_Type" Type="int" />
+          <Property Name="Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Perfomance_Report1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Perfomance1" Type="int" />
+          <Property Name="ID_Report1" Type="int" />
+        </EntityType>
+        <EntityType Name="Perfomance_Report2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Perfomance2" Type="int" />
+          <Property Name="ID_Report2" Type="int" />
+        </EntityType>
+        <EntityType Name="PerfomanceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="10" />
+          <Property Name="Prepayment" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Company" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Report1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Profit" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="Expenses" Type="decimal" Precision="19" Scale="4" />
+          <Property Name="ID_Type" Type="nchar" MaxLength="10" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
+        <EntityType Name="Report2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Taskk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_ServiceStaff" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="DoneOrNo" Type="bit" />
+          <Property Name="DateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Timetable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_Perfomance" Type="int" />
+          <Property Name="ID_Artist" Type="int" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="TypeOfArtist">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="12" />
+          <Property Name="AmountOfPerf" Type="int" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="ID_Position" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="11" />
+          <Property Name="ID_TypeOfArtist" Type="int" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Photo" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Animal_AnimalType">
+          <End Role="AnimalType" Type="Self.AnimalType" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnimalType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Applicationn" Type="Self.Applicationn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applicationn">
+              <PropertyRef Name="ID_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cabinet_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cabinet">
+              <PropertyRef Name="ID_Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cage_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Cage" Type="Self.Cage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cage">
+              <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_PerfomanceType">
+          <End Role="PerfomanceType" Type="Self.PerfomanceType" Multiplicity="0..1" />
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfomanceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report1_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Perfomance_Report1" Type="Self.Perfomance_Report1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report1">
+              <PropertyRef Name="ID_Perfomance1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report1_Report11">
+          <End Role="Report1" Type="Self.Report1" Multiplicity="0..1" />
+          <End Role="Perfomance_Report1" Type="Self.Perfomance_Report1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report1">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report1">
+              <PropertyRef Name="ID_Report1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report2_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Perfomance_Report2" Type="Self.Perfomance_Report2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report2">
+              <PropertyRef Name="ID_Perfomance2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report2_Report21">
+          <End Role="Report2" Type="Self.Report2" Multiplicity="0..1" />
+          <End Role="Perfomance_Report2" Type="Self.Perfomance_Report2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report2">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report2">
+              <PropertyRef Name="ID_Report2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Taskk" Type="Self.Taskk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Taskk">
+              <PropertyRef Name="ID_ServiceStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timetable_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Timetable">
+              <PropertyRef Name="ID_Perfomance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timetable_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Timetable">
+              <PropertyRef Name="ID_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_To_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_TypeOfArtist">
+          <End Role="TypeOfArtist" Type="Self.TypeOfArtist" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfArtist">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="ID_TypeOfArtist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CirkModelContainer">
+          <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnimalType" EntityType="Self.AnimalType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Applicationn" EntityType="Self.Applicationn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cabinet" EntityType="Self.Cabinet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cage" EntityType="Self.Cage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CostumeDept" EntityType="Self.CostumeDept" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DressingRoom" EntityType="Self.DressingRoom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfomance" EntityType="Self.Perfomance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfomance_Report1" EntityType="Self.Perfomance_Report1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfomance_Report2" EntityType="Self.Perfomance_Report2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PerfomanceType" EntityType="Self.PerfomanceType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report1" EntityType="Self.Report1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Report2" EntityType="Self.Report2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Taskk" EntityType="Self.Taskk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Timetable" EntityType="Self.Timetable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeOfArtist" EntityType="Self.TypeOfArtist" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Animal_AnimalType" Association="Self.FK_Animal_AnimalType">
+            <End Role="AnimalType" EntitySet="AnimalType" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_Gender" Association="Self.FK_Animal_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Worker" Association="Self.FK_Application_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Applicationn" EntitySet="Applicationn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cabinet_Worker" Association="Self.FK_Cabinet_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Cabinet" EntitySet="Cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cage_Animal" Association="Self.FK_Cage_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="Cage" EntitySet="Cage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_PerfomanceType" Association="Self.FK_Perfomance_PerfomanceType">
+            <End Role="PerfomanceType" EntitySet="PerfomanceType" />
+            <End Role="Perfomance" EntitySet="Perfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report1_Perfomance" Association="Self.FK_Perfomance_Report1_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Perfomance_Report1" EntitySet="Perfomance_Report1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report1_Report11" Association="Self.FK_Perfomance_Report1_Report11">
+            <End Role="Report1" EntitySet="Report1" />
+            <End Role="Perfomance_Report1" EntitySet="Perfomance_Report1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report2_Perfomance" Association="Self.FK_Perfomance_Report2_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Perfomance_Report2" EntitySet="Perfomance_Report2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report2_Report21" Association="Self.FK_Perfomance_Report2_Report21">
+            <End Role="Report2" EntitySet="Report2" />
+            <End Role="Perfomance_Report2" EntitySet="Perfomance_Report2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Worker" Association="Self.FK_Task_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Taskk" EntitySet="Taskk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timetable_Perfomance" Association="Self.FK_Timetable_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Timetable" EntitySet="Timetable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timetable_Worker" Association="Self.FK_Timetable_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Timetable" EntitySet="Timetable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_To_Position" Association="Self.FK_Worker_To_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_TypeOfArtist" Association="Self.FK_Worker_TypeOfArtist">
+            <End Role="TypeOfArtist" EntitySet="TypeOfArtist" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CirkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Type" Type="Int32" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="ID_Gender" Type="Int32" />
+          <Property Name="Weight" Type="Int32" />
+          <Property Name="FoodPreference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CareRecommendations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Trainer" Type="Int32" />
+          <NavigationProperty Name="AnimalType" Relationship="Self.FK_Animal_AnimalType" FromRole="Animal" ToRole="AnimalType" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_Animal_Gender" FromRole="Animal" ToRole="Gender" />
+          <NavigationProperty Name="Cage" Relationship="Self.FK_Cage_Animal" FromRole="Animal" ToRole="Cage" />
+        </EntityType>
+        <EntityType Name="AnimalType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animal" Relationship="Self.FK_Animal_AnimalType" FromRole="AnimalType" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Applicationn">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Artist" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoneOrNo" Type="Boolean" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Application_Worker" FromRole="Applicationn" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Cabinet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Worker" Type="Int32" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Cabinet_Worker" FromRole="Cabinet" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Cage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Animal" Type="Int32" />
+          <NavigationProperty Name="Animal" Relationship="Self.FK_Cage_Animal" FromRole="Cage" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="CostumeDept">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="DressingRoom">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animal" Relationship="Self.FK_Animal_Gender" FromRole="Gender" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Perfomance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ID_Type" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="PerfomanceType" Relationship="Self.FK_Perfomance_PerfomanceType" FromRole="Perfomance" ToRole="PerfomanceType" />
+          <NavigationProperty Name="Perfomance_Report1" Relationship="Self.FK_Perfomance_Report1_Perfomance" FromRole="Perfomance" ToRole="Perfomance_Report1" />
+          <NavigationProperty Name="Perfomance_Report2" Relationship="Self.FK_Perfomance_Report2_Perfomance" FromRole="Perfomance" ToRole="Perfomance_Report2" />
+          <NavigationProperty Name="Timetable" Relationship="Self.FK_Timetable_Perfomance" FromRole="Perfomance" ToRole="Timetable" />
+        </EntityType>
+        <EntityType Name="Perfomance_Report1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Perfomance1" Type="Int32" />
+          <Property Name="ID_Report1" Type="Int32" />
+          <NavigationProperty Name="Perfomance" Relationship="Self.FK_Perfomance_Report1_Perfomance" FromRole="Perfomance_Report1" ToRole="Perfomance" />
+          <NavigationProperty Name="Report1" Relationship="Self.FK_Perfomance_Report1_Report11" FromRole="Perfomance_Report1" ToRole="Report1" />
+        </EntityType>
+        <EntityType Name="Perfomance_Report2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Perfomance2" Type="Int32" />
+          <Property Name="ID_Report2" Type="Int32" />
+          <NavigationProperty Name="Perfomance" Relationship="Self.FK_Perfomance_Report2_Perfomance" FromRole="Perfomance_Report2" ToRole="Perfomance" />
+          <NavigationProperty Name="Report2" Relationship="Self.FK_Perfomance_Report2_Report21" FromRole="Perfomance_Report2" ToRole="Report2" />
+        </EntityType>
+        <EntityType Name="PerfomanceType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Prepayment" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Perfomance" Relationship="Self.FK_Perfomance_PerfomanceType" FromRole="PerfomanceType" ToRole="Perfomance" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_To_Position" FromRole="Position" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Report1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Profit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Expenses" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ID_Type" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+          <NavigationProperty Name="Perfomance_Report1" Relationship="Self.FK_Perfomance_Report1_Report11" FromRole="Report1" ToRole="Perfomance_Report1" />
+        </EntityType>
+        <EntityType Name="Report2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Month" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Year" Type="Int32" />
+          <NavigationProperty Name="Perfomance_Report2" Relationship="Self.FK_Perfomance_Report2_Report21" FromRole="Report2" ToRole="Perfomance_Report2" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Taskk">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_ServiceStaff" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoneOrNo" Type="Boolean" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Task_Worker" FromRole="Taskk" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Timetable">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_Perfomance" Type="Int32" />
+          <Property Name="ID_Artist" Type="Int32" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Perfomance" Relationship="Self.FK_Timetable_Perfomance" FromRole="Timetable" ToRole="Perfomance" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Timetable_Worker" FromRole="Timetable" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="TypeOfArtist">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="AmountOfPerf" Type="Int32" />
+          <NavigationProperty Name="Worker" Relationship="Self.FK_Worker_TypeOfArtist" FromRole="TypeOfArtist" ToRole="Worker" />
+        </EntityType>
+        <EntityType Name="Worker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="ID_Position" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="ID_TypeOfArtist" Type="Int32" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Applicationn" Relationship="Self.FK_Application_Worker" FromRole="Worker" ToRole="Applicationn" />
+          <NavigationProperty Name="Cabinet" Relationship="Self.FK_Cabinet_Worker" FromRole="Worker" ToRole="Cabinet" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_Worker_To_Position" FromRole="Worker" ToRole="Position" />
+          <NavigationProperty Name="Taskk" Relationship="Self.FK_Task_Worker" FromRole="Worker" ToRole="Taskk" />
+          <NavigationProperty Name="Timetable" Relationship="Self.FK_Timetable_Worker" FromRole="Worker" ToRole="Timetable" />
+          <NavigationProperty Name="TypeOfArtist" Relationship="Self.FK_Worker_TypeOfArtist" FromRole="Worker" ToRole="TypeOfArtist" />
+        </EntityType>
+        <Association Name="FK_Animal_AnimalType">
+          <End Role="AnimalType" Type="Self.AnimalType" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnimalType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="ID_Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cage_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Cage" Type="Self.Cage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cage">
+              <PropertyRef Name="ID_Animal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Application_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Applicationn" Type="Self.Applicationn" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applicationn">
+              <PropertyRef Name="ID_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cabinet_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Cabinet" Type="Self.Cabinet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cabinet">
+              <PropertyRef Name="ID_Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_PerfomanceType">
+          <End Role="PerfomanceType" Type="Self.PerfomanceType" Multiplicity="0..1" />
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PerfomanceType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance">
+              <PropertyRef Name="ID_Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report1_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Perfomance_Report1" Type="Self.Perfomance_Report1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report1">
+              <PropertyRef Name="ID_Perfomance1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report2_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Perfomance_Report2" Type="Self.Perfomance_Report2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report2">
+              <PropertyRef Name="ID_Perfomance2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timetable_Perfomance">
+          <End Role="Perfomance" Type="Self.Perfomance" Multiplicity="0..1" />
+          <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfomance">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Timetable">
+              <PropertyRef Name="ID_Perfomance" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report1_Report11">
+          <End Role="Report1" Type="Self.Report1" Multiplicity="0..1" />
+          <End Role="Perfomance_Report1" Type="Self.Perfomance_Report1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report1">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report1">
+              <PropertyRef Name="ID_Report1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfomance_Report2_Report21">
+          <End Role="Report2" Type="Self.Report2" Multiplicity="0..1" />
+          <End Role="Perfomance_Report2" Type="Self.Perfomance_Report2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report2">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Perfomance_Report2">
+              <PropertyRef Name="ID_Report2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_To_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Task_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Taskk" Type="Self.Taskk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Taskk">
+              <PropertyRef Name="ID_ServiceStaff" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Timetable_Worker">
+          <End Role="Worker" Type="Self.Worker" Multiplicity="0..1" />
+          <End Role="Timetable" Type="Self.Timetable" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Worker">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Timetable">
+              <PropertyRef Name="ID_Artist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Worker_TypeOfArtist">
+          <End Role="TypeOfArtist" Type="Self.TypeOfArtist" Multiplicity="0..1" />
+          <End Role="Worker" Type="Self.Worker" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeOfArtist">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Worker">
+              <PropertyRef Name="ID_TypeOfArtist" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CirkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Animal" EntityType="Self.Animal" />
+          <EntitySet Name="AnimalType" EntityType="Self.AnimalType" />
+          <EntitySet Name="Applicationn" EntityType="Self.Applicationn" />
+          <EntitySet Name="Cabinet" EntityType="Self.Cabinet" />
+          <EntitySet Name="Cage" EntityType="Self.Cage" />
+          <EntitySet Name="CostumeDept" EntityType="Self.CostumeDept" />
+          <EntitySet Name="DressingRoom" EntityType="Self.DressingRoom" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="Perfomance" EntityType="Self.Perfomance" />
+          <EntitySet Name="Perfomance_Report1" EntityType="Self.Perfomance_Report1" />
+          <EntitySet Name="Perfomance_Report2" EntityType="Self.Perfomance_Report2" />
+          <EntitySet Name="PerfomanceType" EntityType="Self.PerfomanceType" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Report1" EntityType="Self.Report1" />
+          <EntitySet Name="Report2" EntityType="Self.Report2" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Taskk" EntityType="Self.Taskk" />
+          <EntitySet Name="Timetable" EntityType="Self.Timetable" />
+          <EntitySet Name="TypeOfArtist" EntityType="Self.TypeOfArtist" />
+          <EntitySet Name="Worker" EntityType="Self.Worker" />
+          <AssociationSet Name="FK_Animal_AnimalType" Association="Self.FK_Animal_AnimalType">
+            <End Role="AnimalType" EntitySet="AnimalType" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_Gender" Association="Self.FK_Animal_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cage_Animal" Association="Self.FK_Cage_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="Cage" EntitySet="Cage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Application_Worker" Association="Self.FK_Application_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Applicationn" EntitySet="Applicationn" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cabinet_Worker" Association="Self.FK_Cabinet_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Cabinet" EntitySet="Cabinet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_PerfomanceType" Association="Self.FK_Perfomance_PerfomanceType">
+            <End Role="PerfomanceType" EntitySet="PerfomanceType" />
+            <End Role="Perfomance" EntitySet="Perfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report1_Perfomance" Association="Self.FK_Perfomance_Report1_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Perfomance_Report1" EntitySet="Perfomance_Report1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report2_Perfomance" Association="Self.FK_Perfomance_Report2_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Perfomance_Report2" EntitySet="Perfomance_Report2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timetable_Perfomance" Association="Self.FK_Timetable_Perfomance">
+            <End Role="Perfomance" EntitySet="Perfomance" />
+            <End Role="Timetable" EntitySet="Timetable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report1_Report11" Association="Self.FK_Perfomance_Report1_Report11">
+            <End Role="Report1" EntitySet="Report1" />
+            <End Role="Perfomance_Report1" EntitySet="Perfomance_Report1" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfomance_Report2_Report21" Association="Self.FK_Perfomance_Report2_Report21">
+            <End Role="Report2" EntitySet="Report2" />
+            <End Role="Perfomance_Report2" EntitySet="Perfomance_Report2" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_To_Position" Association="Self.FK_Worker_To_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Task_Worker" Association="Self.FK_Task_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Taskk" EntitySet="Taskk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Timetable_Worker" Association="Self.FK_Timetable_Worker">
+            <End Role="Worker" EntitySet="Worker" />
+            <End Role="Timetable" EntitySet="Timetable" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Worker_TypeOfArtist" Association="Self.FK_Worker_TypeOfArtist">
+            <End Role="TypeOfArtist" EntitySet="TypeOfArtist" />
+            <End Role="Worker" EntitySet="Worker" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CirkModelContainer" CdmEntityContainer="CirkEntities">
+          <EntitySetMapping Name="Animal">
+            <EntityTypeMapping TypeName="CirkModel.Animal">
+              <MappingFragment StoreEntitySet="Animal">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Type" ColumnName="ID_Type" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="ID_Gender" ColumnName="ID_Gender" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="FoodPreference" ColumnName="FoodPreference" />
+                <ScalarProperty Name="CareRecommendations" ColumnName="CareRecommendations" />
+                <ScalarProperty Name="ID_Trainer" ColumnName="ID_Trainer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnimalType">
+            <EntityTypeMapping TypeName="CirkModel.AnimalType">
+              <MappingFragment StoreEntitySet="AnimalType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applicationn">
+            <EntityTypeMapping TypeName="CirkModel.Applicationn">
+              <MappingFragment StoreEntitySet="Applicationn">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Artist" ColumnName="ID_Artist" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="DoneOrNo" ColumnName="DoneOrNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cabinet">
+            <EntityTypeMapping TypeName="CirkModel.Cabinet">
+              <MappingFragment StoreEntitySet="Cabinet">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ID_Worker" ColumnName="ID_Worker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cage">
+            <EntityTypeMapping TypeName="CirkModel.Cage">
+              <MappingFragment StoreEntitySet="Cage">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Animal" ColumnName="ID_Animal" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostumeDept">
+            <EntityTypeMapping TypeName="CirkModel.CostumeDept">
+              <MappingFragment StoreEntitySet="CostumeDept">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DressingRoom">
+            <EntityTypeMapping TypeName="CirkModel.DressingRoom">
+              <MappingFragment StoreEntitySet="DressingRoom">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="CirkModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfomance">
+            <EntityTypeMapping TypeName="CirkModel.Perfomance">
+              <MappingFragment StoreEntitySet="Perfomance">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID_Type" ColumnName="ID_Type" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfomance_Report1">
+            <EntityTypeMapping TypeName="CirkModel.Perfomance_Report1">
+              <MappingFragment StoreEntitySet="Perfomance_Report1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Perfomance1" ColumnName="ID_Perfomance1" />
+                <ScalarProperty Name="ID_Report1" ColumnName="ID_Report1" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfomance_Report2">
+            <EntityTypeMapping TypeName="CirkModel.Perfomance_Report2">
+              <MappingFragment StoreEntitySet="Perfomance_Report2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Perfomance2" ColumnName="ID_Perfomance2" />
+                <ScalarProperty Name="ID_Report2" ColumnName="ID_Report2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PerfomanceType">
+            <EntityTypeMapping TypeName="CirkModel.PerfomanceType">
+              <MappingFragment StoreEntitySet="PerfomanceType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Prepayment" ColumnName="Prepayment" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="CirkModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report1">
+            <EntityTypeMapping TypeName="CirkModel.Report1">
+              <MappingFragment StoreEntitySet="Report1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Profit" ColumnName="Profit" />
+                <ScalarProperty Name="Expenses" ColumnName="Expenses" />
+                <ScalarProperty Name="ID_Type" ColumnName="ID_Type" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Report2">
+            <EntityTypeMapping TypeName="CirkModel.Report2">
+              <MappingFragment StoreEntitySet="Report2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CirkModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Taskk">
+            <EntityTypeMapping TypeName="CirkModel.Taskk">
+              <MappingFragment StoreEntitySet="Taskk">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_ServiceStaff" ColumnName="ID_ServiceStaff" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DoneOrNo" ColumnName="DoneOrNo" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Timetable">
+            <EntityTypeMapping TypeName="CirkModel.Timetable">
+              <MappingFragment StoreEntitySet="Timetable">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Perfomance" ColumnName="ID_Perfomance" />
+                <ScalarProperty Name="ID_Artist" ColumnName="ID_Artist" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeOfArtist">
+            <EntityTypeMapping TypeName="CirkModel.TypeOfArtist">
+              <MappingFragment StoreEntitySet="TypeOfArtist">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AmountOfPerf" ColumnName="AmountOfPerf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Worker">
+            <EntityTypeMapping TypeName="CirkModel.Worker">
+              <MappingFragment StoreEntitySet="Worker">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ID_TypeOfArtist" ColumnName="ID_TypeOfArtist" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
